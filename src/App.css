@@ -1,38 +1,189 @@
-.App {
+body {
+  font-family: 'Poppins';
+  color: #353535;
+}
+h1 {
+  font-size: 1.5em;
+  color: #FFF;
+  font-family: 'Poppins';
+  padding-left: .5em;
+}
+h2 {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h3 {
+  font-family: 'Poppins';
+  color: #3B8EA5;
+  text-align: center;
+  padding-top: 1em;
+  margin-bottom: 1em;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.save{
+  text-align: center;
+  padding-bottom: 1em;
+}
+.top-bar {
+  background-color: #2D728F;
+  padding: 1px;
+}
+.bottom-bar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+}
+.save-button {
+  cursor: pointer;
+  text-align: right;
+  padding: 1em;
+  border: solid #2D728F;
+  border-radius: 6em;
+  background-color: #2D728F;
+  color: #FFF;
+}
+.save-button:focus {
+  outline: none;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0em;
+  padding: 0.5em;
+}
+.grid .section {
+  height: 60vh;
+  margin: 0.5em;
+}
+.one {
+  grid-column: 1;
+}
+.two { 
+  grid-column: 2;
+}
+.three {
+  grid-column: 3;
+}
+.card {
+  border: solid 0.125em #efefef;
+  background-color: #FFF;
+  border-radius: 0.5em;
+  box-sizing: border-box;
+  width: 30vw;
+  margin: 1.5em;
 }
 
-.App-link {
-  color: #61dafb;
+/* aircrafts list*/
+.aircraft {
+  border: solid 0.125em #EFEFEF;
+  border-radius: 0.5em;
+  margin: 0.5em;
+  padding: 1em 1em 1em 1em;
+  text-align: center;
+  cursor: pointer;
+}
+.aircraft-active {
+  border: solid 0.125em #EFEFEF;
+  color: #FFF;
+  background-color: #009B72;
+  border-radius: 0.5em;
+  margin: 0.5em;
+  padding: 1em 1em 1em 1em;
+  text-align: center;
+  cursor: pointer;
+}
+.aircraft .name{
+  text-align: center;
+  font-weight: 600;
+}
+.aircraft .utilisation{
+  color: #7B0D1E;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* flights list*/
+.flights{
+  height: 340px; 
+  overflow: hidden; 
+  overflow-y: scroll;
+}
+.flight {
+  border: solid 0.125em #EFEFEF;
+  border-radius: 0.5em;
+  margin: 0.5em;
+  padding: 1em 1em 4em 1em;
+  cursor: pointer;
+}
+.flight .name{
+  text-align: center;
+  font-weight: 600;
+}
+
+.flight .departure{
+  float: left;
+}
+
+.flight .arrival{
+  float: right;
+}
+
+/* rotation list*/
+.rotations{
+  height: 340px; 
+  overflow: hidden; 
+  overflow-y: scroll;
+}
+.rotation {
+  border: solid 0.125em #EFEFEF;
+  border-radius: 0.5em;
+  margin: 0.5em;
+  padding: 1em 1em 1em 1em;
+  cursor: pointer;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.rotation .name{
+  text-align: left;
+  font-weight: 600;
+}
+
+.rotation .departure{
+  float: left;
+  grid-column: 1;
+}
+.rotation .separator{
+  text-align: center;
+  grid-column: 2;
+  color: #FF9F1C
+}
+.rotation .arrival{
+  float: right;
+  grid-column: 3;
+}
+
+/* timeline */
+.timeline-list {
+  background-color: #009B72;
+  width: .2em;
+  height: 2em;
+}
+.timeline-list-idle {
+  background-color: #C4CBCA;
+  width: .2em;
+  height: 2em;
+}
+.timeline-list-turnaround {
+  background-color: #6761A8;
+  width: .2em;
+  height: 2em;
+}
+ul#timeline li{
+  display: inline-block;
+}
+.timeline-label {
+  margin-left: .5em;
+  margin-right: .5em;
 }

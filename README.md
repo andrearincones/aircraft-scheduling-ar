@@ -1,10 +1,13 @@
-# Getting Started with Create React App
+# Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm i`
+Instals dependencies from package.json
 
 ### `npm start`
 
@@ -14,57 +17,36 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### Acceptance Criteria
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* The app shows a list of all our aircrafts to choose from
+* The app shows a list of all the flights the airline plan to operate that day, their origin, destination, departure time and arrival time
+* The purpose of the app is to allow the user to view and edit the daily rotation for each aircraft
+* The rotation is the list of flights, in order, an individual aircraft will operate during that day
+* Flights must be chosen by the user from our list of flights (right sidebar on the wireframe)
+* The app lets the user edit the rotation freely but enforces the following rules:
+    * All aircrafts must be on the ground at midnight.
+    * The turnaround time (minimum time between the end of a flight and the beginning of the next one) is always 20min for our airline.
+    * Aircrafts cannot "teleport" and cannot move without operating a flight, empty aircrafts cost too much!
+* The app must display for each aircraft its utilization in percent, i.e. the time the aircraft is on scheduled service per 24 hours
+* Aircraft timeline: for the selected aircraft, a horizontal bar shows a period of 24 hours, 
+    * scheduled service in green
+    * turnaround time in purple
+    * idle time in grey
 
-### `npm run build`
+### Assumptions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Date element at top of page is a label displaying tomorrow's date.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tools/Packages used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* https://coolors.co/ - for selecting app color palette
+* Axios - for http requests to API
+* Material-UI - for icons and layout components
+* uuid - for generation unique ids to use in keys
 
-### `npm run eject`
+### Notes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+There is a known bug with the timeline. To reproduce, add a flight to the Rotation and then click the same flight to remove and add back to the Flights list; you will observe that the active slot on the timeline does not reset. I decided not to fix this bug due to lack of time. As per the instructions, I kept the assignment time at less than 3 hours.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
